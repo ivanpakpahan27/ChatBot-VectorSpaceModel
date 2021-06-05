@@ -1,0 +1,313 @@
+object FormTabel: TFormTabel
+  Left = 229
+  Top = 125
+  Width = 1051
+  Height = 636
+  Caption = 'Form Tabel Database'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lbl1: TLabel
+    Left = 24
+    Top = 16
+    Width = 319
+    Height = 29
+    Caption = 'BASIS DATA SISTEM PAKAR'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl2: TLabel
+    Left = 96
+    Top = 88
+    Width = 157
+    Height = 24
+    Caption = 'TABEL PENYAKIT'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl3: TLabel
+    Left = 408
+    Top = 88
+    Width = 137
+    Height = 24
+    Caption = 'TABEL GEJALA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl4: TLabel
+    Left = 696
+    Top = 88
+    Width = 194
+    Height = 24
+    Caption = 'TABEL PERTANYAAN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl5: TLabel
+    Left = 56
+    Top = 488
+    Width = 86
+    Height = 13
+    Caption = 'KODE PENYAKIT'
+  end
+  object lbl6: TLabel
+    Left = 56
+    Top = 528
+    Width = 87
+    Height = 13
+    Caption = 'NAMA PENYAKIT'
+  end
+  object lbl7: TLabel
+    Left = 376
+    Top = 488
+    Width = 73
+    Height = 13
+    Caption = 'KODE GEJALA'
+  end
+  object lbl8: TLabel
+    Left = 376
+    Top = 528
+    Width = 74
+    Height = 13
+    Caption = 'NAMA GEJALA'
+  end
+  object lbl9: TLabel
+    Left = 672
+    Top = 488
+    Width = 106
+    Height = 13
+    Caption = 'KODE PERTANYAAN'
+  end
+  object lbl10: TLabel
+    Left = 672
+    Top = 528
+    Width = 73
+    Height = 13
+    Caption = 'PERTANYAAN'
+  end
+  object smdbgrd1: TSMDBGrid
+    Left = 56
+    Top = 184
+    Width = 273
+    Height = 281
+    DataSource = DM1.Penyakit_ds
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Flat = False
+    BandsFont.Charset = DEFAULT_CHARSET
+    BandsFont.Color = clWindowText
+    BandsFont.Height = -11
+    BandsFont.Name = 'MS Sans Serif'
+    BandsFont.Style = []
+    Groupings = <>
+    GridStyle.Style = gsCustom
+    GridStyle.OddColor = clWindow
+    GridStyle.EvenColor = clWindow
+    TitleHeight.PixelCount = 24
+    FooterColor = clBtnFace
+    ExOptions = [eoENTERlikeTAB, eoKeepSelection, eoStandardPopup, eoBLOBEditor, eoTitleWordWrap, eoFilterAutoApply]
+    RegistryKey = 'Software\Scalabium'
+    RegistrySection = 'SMDBGrid'
+    WidthOfIndicator = 11
+    DefaultRowHeight = 24
+    ScrollBars = ssHorizontal
+  end
+  object smdbgrd2: TSMDBGrid
+    Left = 360
+    Top = 184
+    Width = 273
+    Height = 281
+    DataSource = DM1.Gejala_ds
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Flat = False
+    BandsFont.Charset = DEFAULT_CHARSET
+    BandsFont.Color = clWindowText
+    BandsFont.Height = -11
+    BandsFont.Name = 'MS Sans Serif'
+    BandsFont.Style = []
+    Groupings = <>
+    GridStyle.Style = gsCustom
+    GridStyle.OddColor = clWindow
+    GridStyle.EvenColor = clWindow
+    TitleHeight.PixelCount = 24
+    FooterColor = clBtnFace
+    ExOptions = [eoENTERlikeTAB, eoKeepSelection, eoStandardPopup, eoBLOBEditor, eoTitleWordWrap, eoFilterAutoApply]
+    RegistryKey = 'Software\Scalabium'
+    RegistrySection = 'SMDBGrid'
+    WidthOfIndicator = 11
+    DefaultRowHeight = 24
+    ScrollBars = ssHorizontal
+  end
+  object smdbgrd3: TSMDBGrid
+    Left = 664
+    Top = 184
+    Width = 273
+    Height = 281
+    DataSource = DM1.Pertanyaan_ds
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Flat = False
+    BandsFont.Charset = DEFAULT_CHARSET
+    BandsFont.Color = clWindowText
+    BandsFont.Height = -11
+    BandsFont.Name = 'MS Sans Serif'
+    BandsFont.Style = []
+    Groupings = <>
+    GridStyle.Style = gsCustom
+    GridStyle.OddColor = clWindow
+    GridStyle.EvenColor = clWindow
+    TitleHeight.PixelCount = 24
+    FooterColor = clBtnFace
+    ExOptions = [eoENTERlikeTAB, eoKeepSelection, eoStandardPopup, eoBLOBEditor, eoTitleWordWrap, eoFilterAutoApply]
+    RegistryKey = 'Software\Scalabium'
+    RegistrySection = 'SMDBGrid'
+    WidthOfIndicator = 11
+    DefaultRowHeight = 24
+    ScrollBars = ssHorizontal
+  end
+  object smdbnvgtr1: TSMDBNavigator
+    Left = 72
+    Top = 136
+    Width = 240
+    Height = 25
+    DataSource = DM1.Penyakit_ds
+    Layout = blGlyphLeft
+    ShowCaption = False
+    ShowGlyph = True
+    TabOrder = 3
+  end
+  object smdbnvgtr2: TSMDBNavigator
+    Left = 368
+    Top = 136
+    Width = 240
+    Height = 25
+    DataSource = DM1.Gejala_ds
+    Layout = blGlyphLeft
+    ShowCaption = False
+    ShowGlyph = True
+    TabOrder = 4
+  end
+  object smdbnvgtr3: TSMDBNavigator
+    Left = 680
+    Top = 136
+    Width = 240
+    Height = 25
+    DataSource = DM1.Pertanyaan_ds
+    Layout = blGlyphLeft
+    ShowCaption = False
+    ShowGlyph = True
+    TabOrder = 5
+  end
+  object dbedtKodePenyakit: TDBEdit
+    Left = 152
+    Top = 488
+    Width = 121
+    Height = 21
+    DataField = 'KodePenyakit'
+    DataSource = DM1.Penyakit_ds
+    TabOrder = 6
+  end
+  object dbedtNamaPenyakit: TDBEdit
+    Left = 152
+    Top = 528
+    Width = 121
+    Height = 21
+    DataField = 'NamaPenyakit'
+    DataSource = DM1.Penyakit_ds
+    TabOrder = 7
+  end
+  object dbedtKodeGejala: TDBEdit
+    Left = 472
+    Top = 488
+    Width = 121
+    Height = 21
+    DataField = 'KodeGejala'
+    DataSource = DM1.Gejala_ds
+    TabOrder = 8
+  end
+  object dbedtNamaGejala: TDBEdit
+    Left = 472
+    Top = 528
+    Width = 121
+    Height = 21
+    DataField = 'NamaGejala'
+    DataSource = DM1.Gejala_ds
+    TabOrder = 9
+  end
+  object dbedtKodePertanyaan: TDBEdit
+    Left = 784
+    Top = 488
+    Width = 121
+    Height = 21
+    DataField = 'KodePertanyaan'
+    DataSource = DM1.Pertanyaan_ds
+    TabOrder = 10
+  end
+  object dbedtPertanyaan: TDBEdit
+    Left = 784
+    Top = 520
+    Width = 209
+    Height = 21
+    DataField = 'Pertanyaan'
+    DataSource = DM1.Pertanyaan_ds
+    TabOrder = 11
+  end
+  object btn1: TButton
+    Left = 424
+    Top = 16
+    Width = 105
+    Height = 33
+    Caption = 'Menu Utama'
+    TabOrder = 12
+    OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 544
+    Top = 16
+    Width = 105
+    Height = 33
+    Caption = 'Ke Rule'
+    TabOrder = 13
+    OnClick = btn2Click
+  end
+end

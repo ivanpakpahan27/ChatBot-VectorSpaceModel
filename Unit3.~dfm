@@ -1,0 +1,70 @@
+object TabelRule: TTabelRule
+  Left = 579
+  Top = 267
+  Width = 587
+  Height = 412
+  Caption = 'Tabel Rule'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btn1: TBitBtn
+    Left = 40
+    Top = 24
+    Width = 153
+    Height = 33
+    Caption = 'Ke Tabel Database'
+    TabOrder = 0
+    OnClick = btn1Click
+  end
+  object smdbgrd1: TSMDBGrid
+    Left = 32
+    Top = 80
+    Width = 489
+    Height = 257
+    DataSource = DM1.Rule_ds
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Flat = False
+    BandsFont.Charset = DEFAULT_CHARSET
+    BandsFont.Color = clWindowText
+    BandsFont.Height = -11
+    BandsFont.Name = 'MS Sans Serif'
+    BandsFont.Style = []
+    Groupings = <>
+    GridStyle.Style = gsCustom
+    GridStyle.OddColor = clWindow
+    GridStyle.EvenColor = clWindow
+    TitleHeight.PixelCount = 24
+    FooterColor = clBtnFace
+    ExOptions = [eoENTERlikeTAB, eoKeepSelection, eoStandardPopup, eoBLOBEditor, eoTitleWordWrap, eoFilterAutoApply]
+    RegistryKey = 'Software\Scalabium'
+    RegistrySection = 'SMDBGrid'
+    WidthOfIndicator = 11
+    DefaultRowHeight = 24
+    ScrollBars = ssHorizontal
+  end
+  object smdbnvgtr1: TSMDBNavigator
+    Left = 208
+    Top = 24
+    Width = 240
+    Height = 33
+    DataSource = DM1.Rule_ds
+    Layout = blGlyphLeft
+    ShowCaption = False
+    ShowGlyph = True
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,127 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Grids, DBGrids, SMDBGrid;
+
+type
+  TFormKonsultasi = class(TForm)
+    lbl1: TLabel;
+    lbl2: TLabel;
+    mmo1: TMemo;
+    pnl1: TPanel;
+    btn1: TButton;
+    btn2: TButton;
+    btn3: TButton;
+    pnl2: TPanel;
+    lbl3: TLabel;
+    btn4: TButton;
+    btn5: TButton;
+    smdbgrd1: TSMDBGrid;
+    procedure btn1Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btn4Click(Sender: TObject);
+    procedure btn5Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure btn3Click(Sender: TObject);
+  private
+    { Private declarations }
+    procedure ShowPertanyaan;
+    procedure CariPenyakit;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  FormKonsultasi: TFormKonsultasi;
+
+implementation
+uses Unit2, Unit4;
+{$R *.dfm}
+
+procedure TFormKonsultasi.btn1Click(Sender: TObject);
+begin
+FormKonsultasi.Hide;
+FormTabel.Show;
+end;
+
+procedure TFormKonsultasi.FormActivate(Sender: TObject);
+begin
+DM1.TabelAktif(true);
+mmo1.Lines.Clear;
+end;
+
+procedure TFormKonsultasi.ShowPertanyaan;
+begin
+  lbl3.Caption := DM1.Pertanyaan_zq.FieldByName('Pertanyaan').AsString;
+end;
+
+procedure TFormKonsultasi.btn4Click(Sender: TObject);
+var s: string;
+begin
+  s := DM1.Pertanyaan_zq.FieldByName('KodePertanyaan').AsString + ' - ' +
+ DM1.Pertanyaan_zq.FieldByName('Pertanyaan').AsString;
+ mmo1.Lines.Add(s);
+ //----------------------------------------
+ if not DM1.Pertanyaan_zq.Eof then begin
+    DM1.Pertanyaan_zq.Next;
+    ShowPertanyaan;
+ end
+ else begin
+    CariPenyakit;
+ end;
+end;
+
+procedure TFormKonsultasi.btn5Click(Sender: TObject);
+begin
+  DM1.Pertanyaan_zq.Next;
+  ShowPertanyaan;
+  if DM1.Pertanyaan_zq.Eof then begin
+    CariPenyakit;
+  end;
+end;
+
+procedure TFormKonsultasi.btn2Click(Sender: TObject);
+begin
+  mmo1.Lines.Clear;
+  DM1.Pertanyaan_zq.First;
+  ShowPertanyaan;
+  btn4.Visible := True;
+  btn5.Visible := True;
+  DM1.pRule_zq.Active := False;
+  DM1.pRule_zq.SQL.Text := 'select * from tabelrule';
+  DM1.pRule_zq.Active := True;
+  btn4.Enabled := True;
+  btn5.Enabled := btn4.Enabled;
+end;
+procedure TFormKonsultasi.CariPenyakit;
+var
+s, s1: string;
+i: Integer;
+begin
+s := 'SELECT * FROM tabelrule WHERE ';
+s1 := '';
+for i := 0 to mmo1.Lines.Count - 1 do begin
+  s1 := s1 + ' AND kodepertanyaan1 LIKE ' + QuotedStr('%' + Trim(copy(mmo1.Lines[i], 1, 5)) + '%');
+end;
+if Length(s1) > 0 then
+ Delete(s1, 1, 5);
+DM1.pRule_zq.Active := False;
+DM1.pRule_zq.SQL.Text := s + s1;
+DM1.pRule_zq.Active := True;
+if DM1.pRule_zq.RecordCount = 0 then begin
+ Application.MessageBox('Maaf, tidak ada penyakit yang terdeteksi', 'Keterangan', MB_OK + MB_ICONWARNING);
+end;
+btn4.Enabled := False;
+btn5.Enabled := False;
+end;
+
+procedure TFormKonsultasi.btn3Click(Sender: TObject);
+begin
+ Close;
+end;
+
+end.

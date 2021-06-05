@@ -1,0 +1,70 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, SMDBGrid, StdCtrls, ExtCtrls, SMDBCtrl, Mask,
+  DBCtrls;
+
+type
+  TFormTabel = class(TForm)
+    lbl1: TLabel;
+    smdbgrd1: TSMDBGrid;
+    smdbgrd2: TSMDBGrid;
+    smdbgrd3: TSMDBGrid;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    lbl4: TLabel;
+    smdbnvgtr1: TSMDBNavigator;
+    smdbnvgtr2: TSMDBNavigator;
+    smdbnvgtr3: TSMDBNavigator;
+    dbedtKodePenyakit: TDBEdit;
+    dbedtNamaPenyakit: TDBEdit;
+    lbl5: TLabel;
+    lbl6: TLabel;
+    dbedtKodeGejala: TDBEdit;
+    dbedtNamaGejala: TDBEdit;
+    lbl7: TLabel;
+    lbl8: TLabel;
+    dbedtKodePertanyaan: TDBEdit;
+    dbedtPertanyaan: TDBEdit;
+    lbl9: TLabel;
+    lbl10: TLabel;
+    btn1: TButton;
+    btn2: TButton;
+    procedure btn1Click(Sender: TObject);
+    procedure btn2Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormTabel: TFormTabel;
+
+implementation
+uses Unit1, Unit3, Unit4;
+
+{$R *.dfm}
+
+procedure TFormTabel.btn1Click(Sender: TObject);
+begin
+FormTabel.Close;
+FormKonsultasi.Show;
+end;
+
+procedure TFormTabel.btn2Click(Sender: TObject);
+begin
+  TabelRule.Show;
+  FormTabel.Close;
+end;
+
+procedure TFormTabel.FormActivate(Sender: TObject);
+begin
+  DM1.TabelAktif(True)
+end;
+
+end.
