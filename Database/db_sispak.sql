@@ -27,13 +27,14 @@ CREATE TABLE IF NOT EXISTS `tabelakun` (
   `Pekerjaan` char(20) DEFAULT NULL,
   `No_Telpon` char(13) DEFAULT NULL,
   PRIMARY KEY (`KodeAkun`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table db_sispak.tabelakun: ~2 rows (approximately)
+-- Dumping data for table db_sispak.tabelakun: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tabelakun` DISABLE KEYS */;
 INSERT INTO `tabelakun` (`KodeAkun`, `Username`, `Password`, `Role`, `Nama`, `Umur`, `Pekerjaan`, `No_Telpon`) VALUES
 	(1, 'Ivan', 'Ivan28', 'Admin', NULL, NULL, NULL, NULL),
-	(2, 'a', 'a', 'User', 'a', 'a', 'a', 'a');
+	(2, 'a', 'a', 'User', 'a', 'a', 'a', 'a'),
+	(3, 'Buki', 'Buki', 'User', 'Buki Iskandar', '60', 'Petani', '021220120');
 /*!40000 ALTER TABLE `tabelakun` ENABLE KEYS */;
 
 -- Dumping structure for table db_sispak.tabelgejala
@@ -105,9 +106,9 @@ CREATE TABLE IF NOT EXISTS `tabelpasien` (
   `No_Telpon` varchar(20) DEFAULT NULL,
   `Diagnosa` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`KodePasien`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table db_sispak.tabelpasien: ~33 rows (approximately)
+-- Dumping data for table db_sispak.tabelpasien: ~39 rows (approximately)
 /*!40000 ALTER TABLE `tabelpasien` DISABLE KEYS */;
 INSERT INTO `tabelpasien` (`KodePasien`, `Nama`, `Umur`, `Pekerjaan`, `No_Telpon`, `Diagnosa`) VALUES
 	(1, 'Zaack', '21', '1212', '12', 'Jantung Koroner'),
@@ -148,7 +149,9 @@ INSERT INTO `tabelpasien` (`KodePasien`, `Nama`, `Umur`, `Pekerjaan`, `No_Telpon
 	(36, 'a', 'a', 'a', 'a', 'Hipertensi'),
 	(37, 'a', 'a', 'a', 'a', 'Hipertensi'),
 	(38, 'a', 'a', 'a', 'a', 'Hipertensi'),
-	(39, 'a', 'a', 'a', 'a', 'Hipertensi');
+	(39, 'a', 'a', 'a', 'a', 'Hipertensi'),
+	(40, 'Buki Iskandar', '60', 'Petani', '021220120', 'Hipertensi'),
+	(41, 'Buki Iskandar', '60', 'Petani', '021220120', 'Tidak Terdeteksi');
 /*!40000 ALTER TABLE `tabelpasien` ENABLE KEYS */;
 
 -- Dumping structure for table db_sispak.tabelpenyakit
